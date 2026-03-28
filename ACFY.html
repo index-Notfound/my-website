@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACFY Community</title>
+
+<style>
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+/* BODY */
+body {
+    background: #0b0b0f;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+}
+
+nav h2 {
+    color: #00ffd5;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero h1 {
+    font-size: 60px;
+    animation: fadeUp 1.5s ease;
+}
+
+.hero p {
+    margin-top: 10px;
+    color: #aaa;
+}
+
+/* BUTTON */
+.btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #00ffd5, #5865F2);
+    border: none;
+    color: black;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* SECTIONS */
+.section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #15151c;
+    margin: 15px;
+    padding: 20px;
+    width: 260px;
+    border-radius: 12px;
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SCROLL ANIMATION */
+.show {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <h2>ACFY</h2>
+    <div>
+        <a href="#about">contact us</a>
+        <a href="#Peek">Peek</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>this is the ACFY web</h1>
+    <p>Any • Content • For • You</p>
+    <button class="btn" onclick="join()">find about us or us</button>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="section">
+    <h2>About Us or "Us"</h2>
+    <p>in this site you have the right to post any thing and whene i say "anything" i mean @n1Th|n9</p>
+</div>
+
+<!-- FEATURES -->
+<div id="features" class="section">
+    <h2>Features</h2>
+
+    <div class="cards">
+        <div class="card">
+            <img src="https://static.scientificamerican.com/sciam/cache/file/51240735-9B5C-41E1-B728312F982F316E_source.jpg?w=900"
+            <h3>Events</h3>
+            <p>Fun events daily</p>
+        </div>
+
+        <div class="card">
+            <img src="https://i0.wp.com/qroo.s3.amazonaws.com/wp-content/uploads/2020/12/08094011/Semar-1.jpg?w=696">
+            <h3>Community</h3>
+            <p>Active d4u9s</p>
+        </div>
+
+        <div class="card">
+            <img src="https://steemitimages.com/DQmY4qLLxKfWPEXt2bPCSMMQ4QmRJn5yJDrHsq7t7uGKLyG/image.png">
+            <h3>H4-py</h3>
+            <p>Custom and Rare stuff</p>
+        </div>
+    </div>
+</div>
+
+<!-- PEEK -->
+<div id="Peek" class="section">
+    <h2>Peek</h2>
+
+    <div class="cards">
+        <div class="card">
+            <img src="https://i.insider.com/632e0ecd78dab80018ed62ef?width=1000&format=jpeg&auto=webp">
+			<h3>sneak peek<h3>
+    </div>
+</div>
+
+<script>
+/* PDF BUTTON */
+function join() {
+    window.location.href = "https://galacticjourney.org/stories/I_Have_No_Mouth_and_I_Must_Scream_-_Harlan_Ellison.pdf";
+}
+
+/* SCROLL ANIMATION */
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', () => {
+    cards.forEach(card => {
+        const top = card.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            card.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
